@@ -1,0 +1,116 @@
+body {
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  padding-top: 20px;
+}
+
+.page-title {
+  text-align: center;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.main {}
+
+.rooms {
+  border: 2px solid black;
+  width: 100%;
+  max-width: 400px;
+  height: 600px;
+  margin: 0 auto;
+  margin-top: 40px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.rooms__title {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.create-room {
+  margin-top: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.create-room__title {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.create-room__body {
+  margin-top: 15px;
+}
+
+.create-room__option {
+  display: flex;
+  align-items: center;
+}
+
+.create-room__body input {
+  width: auto;
+  min-width: 150px;
+  flex: 1 1 auto;
+  border: 1px solid black;
+  font-size: 16px;
+  padding: 5px;
+  text-align: center;
+}
+
+.create-room__button button {
+  font-size: inherit;
+  border: 1px solid black;
+  padding: 5px;
+  margin-top: 10px;
+  font-size: 18px;
+  width: 100%;
+}
+
+.rooms-list {
+  flex: 1 1 auto;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.room {
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid blueviolet;
+  margin: 0 10px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.room:not(:first-child) {
+  margin-top: 10px;
+}
+
+.room__body {}
+
+.room__title {
+  font-size: 18px;
+  font-weight: 500;
+  color: dodgerblue;
+  margin-bottom: 10px;
+}
+
+.room__author {}
+
+.room__button {
+  height: 40px;
+  padding: 10px 15px;
+  border-radius: inherit;
+  border: 1px solid aqua;
+}

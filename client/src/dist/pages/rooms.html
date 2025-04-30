@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/clearstyle.css">
+  <link rel="stylesheet" href="/css/rooms.css">
+  <title>Online Chat</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <h1 class="page-title">Онлайн чат</h1>
+    <main class="main">
+      <div class="rooms">
+        <div class="rooms__title">
+          <h2>Список комнат</h2>
+        </div>
+        <form class="rooms__createRoom create-room">
+          <h2 class="create-room__title">Создайте свою комнату</h2>
+          <div class="create-room__body">
+            <div class="create-room__option">
+              <input type="text" name="name" id="name" required placeholder="Введите имя">
+            </div>
+            <div class="create-room__button">
+              <button>Создать комнату</button>
+            </div>
+          </div>
+        </form>
+        <div class="rooms-list"></div>
+      </div>
+    </main>
+  </div>
+  <script type="module" src="/js/rooms.js"></script>
+</body>
+
+</html>
