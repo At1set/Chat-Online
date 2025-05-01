@@ -29,6 +29,30 @@ body {
   flex-direction: column;
 }
 
+.rooms__profile {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.profile__user {}
+
+.user {
+  display: flex;
+  align-items: center;
+}
+
+.user__name {
+  font-size: 18px;
+}
+
+.profile__button button {
+  background-color: #000;
+  color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+}
+
 .rooms__title {
   text-align: center;
   font-size: 20px;
@@ -57,7 +81,11 @@ body {
   align-items: center;
 }
 
-.create-room__body input {
+.create-room__option:not(:first-child) {
+  margin-top: 10px;
+}
+
+.create-room__body input:not([type="checkbox"]) {
   width: auto;
   min-width: 150px;
   flex: 1 1 auto;
@@ -67,11 +95,28 @@ body {
   text-align: center;
 }
 
+.create-room__option:nth-child(2) {
+  justify-self: center;
+}
+
+.create-room__option:nth-child(2) label {
+  margin-left: 10px;
+}
+
+
+#private:checked ~ #password{
+  display: block;
+}
+
+.create-room__option.hidden{
+  display: none;
+}
+
 .create-room__button button {
   font-size: inherit;
-  border: 1px solid black;
+  border: 2px solid black;
   padding: 5px;
-  margin-top: 10px;
+  margin-top: 20px;
   font-size: 18px;
   width: 100%;
 }
@@ -88,7 +133,6 @@ body {
   display: flex;
   justify-content: space-between;
   border: 2px solid blueviolet;
-  margin: 0 10px;
   padding: 10px;
   border-radius: 10px;
 }
@@ -109,8 +153,109 @@ body {
 .room__author {}
 
 .room__button {
+  display: flex;
+  align-items: center;
+  border-radius: inherit;
+}
+
+.room__button img {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.room__button button {
   height: 40px;
   padding: 10px 15px;
   border-radius: inherit;
   border: 1px solid aqua;
+}
+
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+
+  transition: opacity .3s ease 0s;
+}
+
+.modal._active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modal__body {
+  background-color: #fff;
+  padding: 20px 10px;
+  border-radius: 20px;
+  border: 1px solid black;
+}
+
+.modal__body form {
+  border: 2px solid black;
+  display: flex;
+  border-radius: inherit;
+  overflow: hidden;
+  transition: border .3s ease 0s;
+}
+
+.modal__body form._error {
+  border: 2px solid rgb(255, 0, 0);
+}
+
+.modal__body input {
+  min-width: 120px;
+  display: block;
+  flex: 1 1 auto;
+  padding: 10px;
+  margin-right: 10px;
+  font-size: 16px;
+}
+
+.modal__form {
+  position: relative;
+}
+
+.modal__body form::before {
+  content: "Пароль не подходит!";
+  display: block;
+  padding: 5px 10px;
+  background-color: #fff;
+  border: 2px solid rgb(255, 0, 0);
+  border-bottom: 1px solid rgb(255, 0, 0);
+  font-size: 16px;
+  position: absolute;
+  left: 40px;
+  bottom: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: .3s ease 0s;
+  transition-property: opacity, left;
+}
+
+.modal__body form._error::before {
+  opacity: 1;
+  visibility: visible;
+  left: 0;
+}
+
+.modal__body button {
+  display: block;
+  padding: 10px 20px;
+  background-color: black;
+  color: #fff;
+  transition: background-color .3s ease 0s;
+}
+
+.modal__body button:disabled {
+  background-color: rgb(137, 137, 137);
 }

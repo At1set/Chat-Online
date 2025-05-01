@@ -4,21 +4,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/clearstyle.css">
   <link rel="stylesheet" href="/css/chat.css">
   <title>Chat</title>
 </head>
 
 <body>
   <div class="wrapper">
-    <main class="main">
-      <div class="chat">
-        <div class="chat-messages">
-          
-        </div>
+    <main class="chat">
+      <div class="chat__back">
+        <button> &larr; Вернуться назад</button>
+      </div>
+      <div class="chat-users"></div>
+      <div class="chat__messages chat-messages"></div>
+      <div class="chat__input">
+        <form>
+          <textarea type="text" rows="1" name="message" placeholder="Введите текст..."></textarea>
+          <button id="send-message">
+            <img src="/icons/send.svg" alt="->">
+          </button>
+        </form>
       </div>
     </main>
   </div>
-  <script src="/js/chat.js"></script>
+  <script type="module" src="/js/chat.js"></script>
 </body>
 
 </html>
